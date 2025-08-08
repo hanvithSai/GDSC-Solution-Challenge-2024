@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Minds</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .header {
+      padding: 80px;
+      color: #fff;
+      background: #3498db;
+      transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    }
+
+    .header h1 {
+      font-size: 80px;
+      font-family: 'Times New Roman';
+      transition: color 0.3s ease-in-out;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .main-content {
+      padding: 0 30px;
+      margin: 20px 0;
+    }
+
+    .post {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      background-color: #3498db;
+      color: white;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .navbar a:hover {
+      background-color: #3e8ec2;
+    }
+
+    .login-btn {
+      background-color: white;
+      color: #3498db;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .login-btn:hover {
+      background-color: #ecf0f1;
+      color: #333;
+    }
+
+    .footer {
+      background-color: #ecf0f1;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .post img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    /* Custom styles for pop-out menu */
+    .pop-out-menu {
+      position: relative;
+      display: inline-block;
+    }
+
+    .pop-out-menu-content {
+      display: none;
+      position: absolute;
+      background-color: #3498db;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .pop-out-menu:hover .pop-out-menu-content {
+      display: block;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1>Impact Minds</h1>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+
+      <a class="navbar-brand" href="#">Home</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a href="#fresh-arrivals" class="nav-link">Fresh Arrivals</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#bestsellers" class="nav-link">Bestsellers</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="consumer.html" class="nav-link">Consumer Services</a>  
+          </li>
+
+<li class="nav-item">
+            <a href="farmer.html" class="nav-link">Farmer Services</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+        </ul>
+
+        <button class="btn btn-outline-primary my-2 my-sm-0 login-btn" type="button" data-toggle="modal" data-target="#loginModal">Login</button>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="row">
+
+      <div class="col-md-8 main-content">
+
+        <div id="fresh-arrivals" class="post">
+          <h2>Fresh Arrivals</h2>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfo4DKD-23KyKjzmdCHkITQBzYGbbCtuXvKvkk0KUkB-PJ30nlXm6bQY0cG3eHXi1HZrI&usqp=CAU" alt="Fresh Arrivals Image">
+          <p>Explore our latest offerings...</p>
+        </div>
+
+        <div id="bestsellers" class="post">
+          <h2>Bestsellers</h2>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-ncCXZlVQPsXPVfPGDJ3lrXDEmQ8ovOG1UA&usqp=CAU" alt="Bestsellers Image">
+          <p>Discover our top-selling products...</p>
+        </div>
+
+      </div>
+
+      <aside class="col-md-4">
+        <div class="sidebar">
+          <h3>Impact & Reach</h3>
+          <p>Improving lives across the world's communities...</p>
+
+          <h3 id="about">About Us</h3>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBc9fZC7u_MzQfe_HvH8Aet-dzRH9eCI3Xdg&usqp=CAU" alt="About Us Image">
+          <p>Learn more about our mission and values...</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2023 Impact Minds</p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Add your login form here -->
+          <form>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+

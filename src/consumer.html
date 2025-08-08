@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Services</title>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .vegetable {
+      background-color: #fff;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .vegetable img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .cart {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+    }
+
+    .cart:hover {
+      background-color: #45a049;
+    }
+
+    .cart-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .quantity-label {
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    .quantity-select {
+      width: 60px;
+      padding: 8px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    .delivery-date {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 8px;
+    }
+
+    .close {
+      color: #888;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #444;
+    }
+
+    #cartItems li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #cartItems li img {
+      max-width: 50px;
+      margin-right: 10px;
+      border-radius: 8px;
+    }
+
+    .checkout {
+      background-color: #3498db;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+
+    .checkout:hover {
+      background-color: #2980b9;
+    }
+
+    #totalAmount {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Consumer Services</h1>
+  </header>
+
+  <section>
+
+    <div class="vegetable">
+      <h2>Tomato</h2>
+      <img src="https://tse1.mm.bing.net/th?id=OIP.1OrgreFLHM96sOvrhcxHHgHaE8&pid=Api&P=0&h=180" alt="Tomato">
+      <p>Price: ₹25 per kg</p>
+      <div class="quantity-label">Quantity</div>
+      <div class="cart-container">
+        <input type="number" class="quantity-select" value="1" min="1">
+        <button class="cart" onclick="addToCart('Tomato', 25, 'https://tse1.mm.bing.net/th?id=OIP.1OrgreFLHM96sOvrhcxHHgHaE8&pid=Api&P=0&h=180')">Add to Cart</button>
+      </div>
+      <p class="delivery-date">Desired Delivery Date: <input type="date"></p>
+    </div>
+
+    <div class="vegetable">
+      <h2>Onion</h2>
+      <img src="https://tse3.mm.bing.net/th?id=OIP.PnzbLh2ZyyriYSYObGoWDgHaH4&pid=Api&P=0&h=180" alt="Onion">
+      <p>Price: ₹40 per kg</p>
+      <div class="quantity-label">Quantity</div>
+      <div class="cart-container">
+        <input type="number" class="quantity-select" value="1" min="1">
+        <button class="cart" onclick="addToCart('Onion', 40, 'https://tse3.mm.bing.net/th?id=OIP.PnzbLh2ZyyriYSYObGoWDgHaH4&pid=Api&P=0&h=180')">Add to Cart</button>
+      </div>
+      <p class="delivery-date">Desired Delivery Date: <input type="date"></p>
+    </div>
+
+    <div class="vegetable">
+      <h2>Potato</h2>
+      <img src="https://tse2.mm.bing.net/th?id=OIP.F0aQXnmCDGEadfNivihUAQHaF8&pid=Api&P=0&h=180" alt="Potato">
+      <p>Price: ₹50 per kg</p>
+      <div class="quantity-label">Quantity</div>
+      <div class="cart-container">
+        <input type="number" class="quantity-select" value="1" min="1">
+        <button class="cart" onclick="addToCart('Potato', 50, 'https://tse2.mm.bing.net/th?id=OIP.F0aQXnmCDGEadfNivihUAQHaF8&pid=Api&P=0&h=180')">Add to Cart</button>
+      </div>
+      <p class="delivery-date">Desired Delivery Date: <input type="date"></p>
+    </div>
+
+    <div class="vegetable">
+      <h2>Carrot</h2>
+      <img src="https://tse1.mm.bing.net/th?id=OIP.l_0nRm4bokIj-O0BRzd9jgHaE7&pid=Api&P=0&h=180" alt="Carrot">
+      <p>Price: ₹35 per kg</p>
+      <div class="quantity-label">Quantity</div>
+      <div class="cart-container">
+        <input type="number" class="quantity-select" value="1" min="1">
+        <button class="cart" onclick="addToCart('Carrot', 35, 'https://tse1.mm.bing.net/th?id=OIP.l_0nRm4bokIj-O0BRzd9jgHaE7&pid=Api&P=0&h=180')">Add to Cart</button>
+      </div>
+      <p class="delivery-date">Desired Delivery Date: <input type="date"></p>
+    </div>
+
+    <!-- Add more vegetable entries as needed -->
+
+  </section>
+
+  <div class="cart-container">
+    <button class="cart" onclick="viewCart()">View Cart</button>
+  </div>
+
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <p id="totalAmount">Total Amount: ₹0.00</p>
+      <a href="payment.html" class="checkoutButton"><button class="checkout" onclick="checkout()">Checkout</button></a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2024 Consumer Services
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(vegetable, price, imgSrc) {
+      const quantity = document.querySelector('.quantity-select').value;
+      const total = (quantity * price).toFixed(2);
+      const cartItem = {
+        name: `${quantity} kg ${vegetable}`,
+        price: parseFloat(total),
+        imgSrc: imgSrc
+      };
+      cart.push(cartItem);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById('cartItems');
+      const totalAmountElement = document.getElementById('totalAmount');
+      let totalAmount = 0;
+
+      // Clear existing items in the cart
+      cartItems.innerHTML = '';
+
+      // Populate the cart items
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<img src="${item.imgSrc}" alt="${item.name}"><span>${item.name}</span><span>₹${item.price.toFixed(2)}</span>`;
+        cartItems.appendChild(li);
+        totalAmount += item.price;
+      });
+
+      // Display the total amount
+      totalAmountElement.textContent = `Total Amount: ₹${totalAmount.toFixed(2)}`;
+    }
+
+    function viewCart() {
+      updateCart();
+      const modal = document.getElementById('cartModal');
+      modal.style.display = 'block';
+    }
+
+    function closeCart() {
+      const modal = document.getElementById('cartModal');
+      modal.style.display = 'none';
+    }
+
+    function checkout() {
+      // Redirect to the anchor tag named "paymentOptions"
+      window.location.href = "payment.html";
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById('cartModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+
+</html>
